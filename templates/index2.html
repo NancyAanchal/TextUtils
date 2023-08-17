@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Text Utils</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ANJTextUtils.com</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">About us</a>
+                </li> 
+                <li class="nav-item">
+                <a class="nav-link" href="#">Feedbacks</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <style>.fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+        }
+        .fa:hover {
+        opacity: 0.7;
+        }</style>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Add font awesome icons -->
+        <a href="https://www.facebook.com/nancy.aanchal.3/" class="fa fa-facebook"></a>
+        <a href="https://www.instagram.com/nancy___aanchal/" class="fa fa-instagram"></a>
+
+    </nav>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Welcome to ANJTextUtils</strong> You can do anything with your text here.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="container p-3 mb-2 bg-light text-dark">
+    <form action='/analyze' method="post">{% csrf_token %}
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"><b>Enter your text here!</b></label>
+            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+        </div>
+
+        <div class="form-check form-switch">
+            <input type ="checkbox" name="removepunc" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault1">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Remove Punctuations</label>
+        </div>
+
+        <div class="form-check form-switch">
+            <input type ="checkbox" name="capfirst" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault2">
+            <label class="form-check-label" for="flexSwitchCheckDefault">UPPERCASE</label>
+        </div>
+
+        <div class="form-check form-switch">
+            <input type ="checkbox" name="nlineremove" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault3">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Remove New Line</label>
+        </div>
+
+        <div class="form-check form-switch">
+            <input type ="checkbox" name="extrspaceremove" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault4">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Remove Extra Space</label>
+        </div>
+
+        <div class="form-check form-switch">
+            <input type ="checkbox" name="numremove" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault5">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Remove Numbers</label>
+        </div>
+
+        <button type="submit" class="btn btn-outline-success mt-2">Analyze Text</button>     
+
+    </form>
+    </div>
+
+    <div class="container-fluid text-bg-dark mb-3" >
+        <p style="text-align:center">@ANJTextUtils</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</body>
+</html>
